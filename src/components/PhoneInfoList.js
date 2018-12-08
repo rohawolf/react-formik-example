@@ -7,7 +7,7 @@ import {
 const PhoneInfoList = ({ data }) => {
   const list = data.map( info => (
     <PhoneInfo 
-      key={info.key}
+      key={info.index}
       username={info.username}
       phone={info.phone}
     />

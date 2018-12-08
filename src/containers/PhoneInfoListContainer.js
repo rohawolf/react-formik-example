@@ -5,41 +5,41 @@ import {
   PhoneInfoList,
 } from '../components';
 
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
+import * as phoneInfoActions from '../modules/phoneInfo';
+
 class PhoneInfoListContainer extends Component {
 
+  onSave = (values) => {
+    const { PhoneInfoActions } = this.props;
+    PhoneInfoActions.add(values);
+  }
+
   render() {
-
-    const dummyData = [
-      {
-        key: 1,
-        username: 'firsttest',
-        phone: '01012345678',
-      },
-      {
-        key: 2,
-        username: 'secondtest',
-        phone: '01043218765',
-      },
-    ];
-
-    const dummyInfo = {
-      key: 1,
-      username: 'firsttest',
-      phone: '01012345678',
-    };
-
-
+    const { phoneInfoList} = this.props;
+    console.log(phoneInfoList);
     return (
       <div>
         <PhoneInfoForm 
-          info={dummyInfo}
+          onSave={this.onSave}
         />
         <PhoneInfoList 
-          data={dummyData}
+          data={phoneInfoList}
         />
       </div>
     );
   }
 }
 
-export default PhoneInfoListContainer;
+export default connect(
+  (state) => ({
+    phoneInfoList: state.phoneInfo.phoneInfoList
+  }),
+
+  (dispatch) => ({
+    PhoneInfoActions: bindActionCreators(phoneInfoActions, dispatch),
+  }),
+
+)(PhoneInfoListContainer);
