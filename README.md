@@ -1,44 +1,28 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# react-formik-exmaple
+
+이름과 전화번호를 입력하고 입력 버튼을 클릭하면 해당 이름과 전화번호를 추가하는 앱이며
+formik library를 이용하여 form을, 앱 내 전역으로 state를 관리하기 위해 redux 아키텍쳐를 사용했습니다.
+
+앱 내 설계 조건은 다음과 같습니다.
+
+1. 해당 앱의 모든 컴포넌트에서는 state를 사용하지 않고 props만을 사용한다. 
+2. dumb 컨테이너(컴포넌트)와 smart 컨테이너(컴포넌트)를 나누어서 작업한다. 
+3. 이름과 전화번호를 입력하기 위해서 formik 이라는 라이브러리를 사용한다. 
+4. 이름은 영문만 입력 가능하며 최대 8자를 넘지 않는다. 
+5. 전화번호는 숫자만 입력 가능하며 11자여야 한다. 
+6. 입력 버튼을 누르고 나면 이름과 전화번호 입력란은 빈 공란이 되어야 한다. 
+7. es6의 문법을 사용한다. var 대신 const와 let을 사용하고 require 대신 import 키워드를 사용한다. 
+
+이 앱은 [Create React App](https://github.com/facebook/create-react-app)를 이용하여 제작하였습니다.
+
 
 ## Available Scripts
 
-In the project directory, you can run:
+프로젝트 폴더 내에서 사용할 수 있는 명령어입니다.
+개발자 mode로 앱을 실행하는 명령어 이외에는 따로 적지 않았습니다.
 
-### `npm start`
+### `yarn start`
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+개발자 mode에서 앱을 실행할 수 있습니다.<br>
+브라우저 내에서 보려면 [http://localhost:3000](http://localhost:3000)를 입력하세요.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
