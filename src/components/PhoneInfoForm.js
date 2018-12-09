@@ -7,6 +7,27 @@ import './PhoneInfoForm.css';
 const PhoneInfoForm = ({ onSave }) => {
   return (
     <Formik
+      validate={(values, props) => {
+        let errors = {};
+
+        // validate 'username'
+        if (!values.username) {
+          errors.username = '필수 입력항목입니다.';
+        }
+        else if (!/^[a-zA-Z]{1,8}$/.test(values.username)) {
+          errors.username = '영문 대/소문자만 입력가능합니다. (최대 8자)';
+        }
+
+        // validate 'phone'
+        if (!values.phone) {
+          errors.phone = '필수 입력항목입니다.';
+        }
+        else if (!/^[\d]{1,11}$/.test(values.phone)) {
+          errors.phone = '숫자만 입력가능합니다. (최대 11자)';
+        }
+        
+        return errors;
+      }}
       onSubmit={(values, { setSubmitting, resetForm }) => {
         setTimeout(() => {
           alert(JSON.stringify(values, null, 2));
