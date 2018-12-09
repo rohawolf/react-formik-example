@@ -3,6 +3,7 @@
 이름과 전화번호를 입력하고 입력 버튼을 클릭하면 해당 이름과 전화번호를 추가하는 앱이며
 formik library를 이용하여 form을, 앱 내 전역으로 state를 관리하기 위해 redux 아키텍쳐를 사용했습니다.
 
+
 앱 내 설계 조건은 다음과 같습니다.
 
 1. 해당 앱의 모든 컴포넌트에서는 state를 사용하지 않고 props만을 사용한다. 
@@ -24,5 +25,6 @@ formik library를 이용하여 form을, 앱 내 전역으로 state를 관리하�
 ### `yarn start`
 
 개발자 mode에서 앱을 실행할 수 있습니다.<br>
-브라우저 내에서 보려면 [http://localhost:3000](http://localhost:3000)를 입력하세요.
+브라우저 내에서 앱을 보려면 명령어 실행 후,<br>
+[http://localhost:3000](http://localhost:3000)를 입력하세요.
 
